@@ -6,9 +6,9 @@ let a5 = [1, NaN, 3, 5, -3];
 const arrCheck = (arr) =>  arr instanceof Array && !!arr.length;
 
 const min = arr => {
-  if (arrCheck(arr) !== false) {
+  if (arrCheck(arr)) {
     return arr.reduce((prev, current) => {
-      if (isNaN(current) === false) {
+      if (!isNaN(current)) {
         return prev < current ? prev : current;
       }
     });
@@ -18,9 +18,9 @@ const min = arr => {
 };
 
 const max = arr => {
-  if (arrCheck(arr) !== false) {
+  if (arrCheck(arr)) {
     return arr.reduce((prev, current) => {
-      if (isNaN(current) === false) {
+      if (!isNaN(current)) {
         return current < prev ? prev : current;
       }
     });
@@ -30,7 +30,7 @@ const max = arr => {
 };
 
 const sum = arr => {
-  if (arrCheck(arr) !== false) {
+  if (arrCheck(arr)) {
     const numberOrZero = n => isNaN(n) ? 0 : n;
     return arr.reduce((prev, current) => {
       return numberOrZero(prev) + numberOrZero(current);
@@ -41,10 +41,10 @@ const sum = arr => {
 };
 
 const minMaxSum = (arr) => {
-  if (arrCheck(arr) !== false) {
+  if (arrCheck(arr)) {
     let results = {sum : 0, min: Infinity, max: -Infinity};
     arr.forEach((item) => {
-      if (isNaN(item) === false) {
+      if (!isNaN(item)) {
         results.sum += item;
         results.min = item < results.min ? item : results.min;
         results.max = item > results.max ? item : results.max;

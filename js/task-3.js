@@ -13,4 +13,4 @@ const getBanknotes = (currencyArray, price, banknotesResult) => {
   }
   return banknotesResult;
 };
-console.log(getBanknotes( banknotes, priceInput, []));
+// how to call getBanknotes( banknotes, priceInput, [])
